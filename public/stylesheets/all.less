@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+.cf() {
+    content: "\0020";
+    display: table;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix() {
+    &:before { .cf(); }
+    &:after { .cf(); clear: both; }
+    zoom: 1;
+}
+
+.centerBlock {
+    margin: 0 auto;
+    width: 1240px;
+}
+
+
+#content-all {
+
+   div.content {
+        .clearfix();
+        .centerBlock;
+        width: 1115px;
+
+        @media all and (min-width: 1440px) {
+            .clearfix();
+            width: 1440px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            .centerBlock;
+
+            .post {
+                width: 370px;
+                height: 370px;
+                float: left;
+                position: relative;
+                margin: 0 1px 1px 0;
+
+                @media all and (min-width: 1440px) {
+                    width: 411px;
+                    height: 411px;
+                    float: left;
+                    position: relative;
+                    margin: 0 1px 1px 0;
+                }
+
+                &.blank { background: #ffffff; }
+
+                img {
+                    width: 370px;
+                    height: 370px;
+
+                    @media all and (min-width: 1440px) {
+                        width: 411px;
+                        height: 411px;
+                    }
+                }
+
+                div.text-block {
+                    position: absolute;
+                    z-index: 2;
+                    top: 45px;
+                    width: 100%;
+                    color: #000000;
+                    max-height: 270px;
+                    overflow: hidden;
+                    
+                    .text {
+                        font: 400 15px/20px Open Sans;
+                        margin: 0 10px 5px 38px;
+                        display: block;
+                        max-height: 280px;
+                        overflow: hidden;
+                    }
+                }
+
+                .post-wrap {
+                    .clearfix();
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+
+                    &.text {
+                        .clearfix();
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        background: none;
+
+                        .note {
+                            position: absolute;
+                            bottom: 16px;
+                            padding: 10px 0 33px 35px;
+
+                            .frame-text {
+                                list-style-type: none;
+                                padding: 0;
+
+                                li {
+                                    font: 300 13px/15px Open Sans;
+                                    color: #a0a19e;
+                                    float: left;
+                                    display: block;
+
+                                    &.date-text {
+
+                                        span { 
+                                            font: 300 33px/33px Open Sans;
+                                            float: left;
+                                            margin-right: 3px;
+                                        }
+                                    }
+
+                                    &.day-text { padding: 0 45px 0 37px; }
+                                    &.time-text { width: 100px;}
+                                }
+                            }
+                        }
+                    }
+
+                    .post-wrap-info {
+                        height: 117px;
+                        background: url("/images/fon.png") repeat;
+                        width: 100%;
+
+                        ul {
+                            padding: 75px 17px 0;
+                            list-style-type: none;
+
+                            li {
+                                font: 300 13px/15px Open Sans;
+                                color: rgba(195, 212, 243, 0.9);
+                                float: left;
+                                display: block;
+
+                                &.info-date {
+
+                                    span { 
+                                        font: 300 33px/33px Open Sans;
+                                        float: left;
+                                        margin-right: 3px;
+                                    }
+                                }
+
+                                &.info-day { padding: 0 45px 0 37px; }
+                                &.info-time { width: 100px;}     
+                            }
+                        
+                            .info-current-weather {
+                                margin-right: 5px;
+                                width: 40px;
+                                height: 30px;
+                                display: block;
+                                float: left;
+                            }
+                              
+                        }                          
+                    }
+
+                    .post-wrap-title {
+                        .clearfix();
+                        width: 100%;
+                        background: rgba(0,0,0,0.5);
+                        font: 300 14px/20px Open Sans;
+                        color: #ffffff;
+                        max-height: 80px;
+                        min-height: 42px;
+                        padding-bottom: 20px;
+
+                        p {
+                            display: block;
+                            max-height: 80px;
+                            overflow: hidden;
+                            padding: 0px 17px;
+                        }
+                    }
+                }
+            } 
+        }
+    } 
+}
+
