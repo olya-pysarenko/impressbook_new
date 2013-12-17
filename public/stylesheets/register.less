@@ -1,4 +1,4 @@
-@charset "utf-8";
+pss@charset "utf-8";
 
 .cf() {
     content: "\0020";
@@ -17,11 +17,14 @@
 @fullWidth: 100%;
 @fullHeight: 100%;
 @centerMargin: 0 auto;
+@baseFont: Open sans;
 
 .centerBlock {
     height: 100%;
     margin: @centerMargin;
-} 
+}
+
+
 
 
 * {
@@ -40,7 +43,7 @@
         }
 
         #wrapper {
-            @media all and (min-width: 1680px) { background: url("/images/main-bg-2560.jpg") center repeat; }
+            @media all and (min-width: 1680px) { background: url("/images/main-bg-more_than_1680.jpg") center repeat; }
             @media all and (max-width: 1680px) { background: url("/images/main-bg_up_to_1680.jpg") center repeat; }
 
             height: 526px;
